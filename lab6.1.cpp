@@ -17,7 +17,7 @@ int main()
 	setlocale(0, "RUS");
 	cout << "¬ведите размер квадратной матрицы:" << endl;
 	correct_input_matrix_dimension(dimension_of_matrix);
-	double** matrix = input_matrix(dimension_of_matrix);
+	double** matrix = input_matrix(dimension_of_matrix, dimension_of_matrix);
 	difference_of_functions_f_and_g(dimension_of_matrix, matrix);
 	cleaning_matrix(dimension_of_matrix, matrix);
 	system("pause");
