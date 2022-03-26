@@ -1,5 +1,5 @@
-﻿//CPP файл для функций проверающих введенные значения
-#include "checking_operations.h"
+//CPP файл для функций проверающих введенные значения
+#include "checking_operations.hpp"
 #include <iostream>	
 using namespace std;
 

@@ -1,21 +1,22 @@
 #include <iostream>
-#include <windows.h>
+// #include <windows.h>
 #include <string>
-#include "matrix_operations.h"
-#include "checking_operations.h"
+#include "matrix_operations.hpp"
+#include "checking_operations.hpp"
 using namespace std;
 
 int main()
 {
-	//размер матрицы
+	//СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹
 	int matrix_size;
-	setlocale(0, "RUS");
-	cout << "Введите размеры матриц" << endl;
+	// setlocale(0, "RUS");
+	cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂС‹ РјР°С‚СЂРёС†" << endl;
 	correct_input_matrix_dimension(matrix_size);
 	double** matrix_1 = input_matrix(matrix_size, matrix_size);
 	double** matrix_2 = input_matrix(matrix_size, matrix_size);
-	//4 - свободный член
+	//4 - СЃРІРѕР±РѕРґРЅС‹Р№ С‡Р»РµРЅ
     matrix_minus_free_number(matrix_1, 4, matrix_size);
+    matrix_multiply_namber(matrix_1, matrix_size, -1);
 	double** minors_determinant = minor_determinant_counter(matrix_1, matrix_size); 
 	if (determinant_counter(matrix_size, matrix_1) != 0)
 	{
@@ -29,6 +30,6 @@ int main()
 		cleaning_matrix(matrix_size, matrix_answer);
 	}
 	else
-		cout << "Нет решений" << endl;
+		cout << "РќРµС‚ СЂРµС€РµРЅРёР№" << endl;
 	return 0;
 }

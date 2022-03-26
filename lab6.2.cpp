@@ -1,18 +1,18 @@
 #include <iostream>
-#include <windows.h>
+// #include <windows.h>
 #include <string>
-#include "matrix_operations.h"
-#include "checking_operations.h"
+#include "matrix_operations.hpp"
+#include "checking_operations.hpp"
 using namespace std;
 
 int main()
 {
-	//размер матрицы. высота матрицы, 
+	//СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹. РІС‹СЃРѕС‚Р° РјР°С‚СЂРёС†С‹, 
 	int length_of_matrix, high_of_matrix, ordinal_num_in_line_1, ordinal_num_in_line_2, rank = 1;
-	setlocale(0, "RUS");
-	cout << "Введите длину матрицы" << endl;
+	// setlocale(0, "RUS");
+	cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РјР°С‚СЂРёС†С‹" << endl;
 	correct_input_matrix_dimension(length_of_matrix);
-	cout << "Введите высоту матрицы" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РІС‹СЃРѕС‚Сѓ РјР°С‚СЂРёС†С‹" << endl;
 	correct_input_matrix_high(length_of_matrix, high_of_matrix);
 	double** matrix = input_matrix(length_of_matrix, high_of_matrix);
 	double** matrix_minor = create_matrix(length_of_matrix, high_of_matrix);
@@ -20,7 +20,7 @@ int main()
 	if (rank == 1)
 		cout << rank;
 	else
-	    cout << "Ранг равен " << minor_counter(length_of_matrix, high_of_matrix, ordinal_num_in_line_1, ordinal_num_in_line_2, matrix_minor, matrix);
+	    cout << "Р Р°РЅРі СЂР°РІРµРЅ " << minor_counter_for_rank(length_of_matrix, high_of_matrix, ordinal_num_in_line_1, ordinal_num_in_line_2, matrix_minor, matrix);
 	cout << endl;
 	cleaning_matrix(high_of_matrix, matrix);
 	cleaning_matrix(high_of_matrix, matrix_minor);
